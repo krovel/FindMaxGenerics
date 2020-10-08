@@ -11,38 +11,47 @@ public class MaximumTest {
 
 	@Test
 	public void testCase1_1() {
-		assertEquals((Integer)9,(Integer)Maximum.findMax(9, 2, 4));
+		Maximum<Integer> max=new Maximum<Integer>(new Integer[]{2,5,6,8,9});
+		assertEquals((Integer)9,Maximum.findMax(max));
 	}	
 	@Test
 	public void testCase1_2() {
-		assertEquals((Integer)20,(Integer)Maximum.findMax(9, 20, 4));
+		Maximum<Integer> max=new Maximum<Integer>(new Integer[]{ 3, 2, 1, 4 });
+		assertEquals((Integer)4,Maximum.findMax(max));
 	}
 	@Test
 	public void testCase1_3() {
-		assertEquals((Integer)30,(Integer)Maximum.findMax(9, 2, 30));
+		Maximum<Integer> max = new Maximum<Integer>(new Integer[6]);
+		assertEquals(null, Maximum.findMax(max));
 	}
 	@Test
 	public void testCase2_1() {
-		assertEquals((Float)9.0F,(Float)Maximum.findMax(9.0F, 2.0F, 3.0F));
+		Maximum<Float> max = new Maximum<Float>(new Float[] { 3f, 2f, 1f });
+		assertEquals((Float)3f, Maximum.findMax(max));
 	}
 	@Test
 	public void testCase2_2() {
-		assertEquals((Float)20.0F,(Float)Maximum.findMax(9.0F, 20.0F, 12.0F));
+		Maximum<Float> max = new Maximum<Float>(new Float[] { 3f, 4f, 1f, 2f, 6f });
+		assertEquals((Float)6F, Maximum.findMax(max));
 	}
 	@Test
 	public void testCase2_3() {
-		assertEquals((Float)30.0F,(Float)Maximum.findMax(9.0F, 2.0F, 30.0F));
+		Maximum<Float> max = new Maximum<Float>(new Float[4]);
+		assertEquals(null, Maximum.findMax(max));
 	}
 	@Test
 	public void testCase3_1() {
-		assertEquals("Peach",Maximum.findMax("Peach","Apple","Banana"));
+		Maximum<String> max = new Maximum<String>(new String[] {"Cherries", "Banana", "Apple"});
+		assertEquals(new String("Cherries"), Maximum.findMax(max));
 	}
 	@Test
 	public void testCase3_2() {
-		assertEquals("Peach",Maximum.findMax("Apple","Peach","Banana"));
+		Maximum<String> max = new Maximum<String>(new String[] { "Cherries", "Grapefruit", "Apple", "Kiwi" });
+		assertEquals(new String("Kiwi"), Maximum.findMax(max));
 	}
 	@Test
 	public void testCase3_3() {
-		assertEquals("Peach",Maximum.findMax( "Banana", "Apple","Peach"));
+		Maximum<String> max = new Maximum<String>(new String[4]);
+		assertEquals(null, Maximum.findMax(max));
 	}
 }
