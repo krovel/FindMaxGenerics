@@ -3,25 +3,24 @@
  */
 package com.cg;
 
+import java.util.*;
+
 public class Maximum <E extends Comparable<E>> {
-	E value1;
-	E value2;
-	E value3;
-	Maximum(E value1,E value2,E value3){
-		this.value1=value1;
-		this.value2=value2;
-		this.value3=value3;
-	}
+	E[] array;
 	
-	public static <E extends Comparable<E>> E findMax(E value1,E value2,E value3){
-		E max=value1;
-		if(value2.compareTo(max)>0)
-			max=value2;
-		if(value3.compareTo(max)>0)
-			max=value3;
-		return max;
+	Maximum(E[] array){
+		this.array=array;
 	}
-    public static void main(String[] args) {
-		System.out.println("Welcome");
+	public static <E extends Comparable<E>> E findMax(Maximum<E> max){
+		
+		Optional<E> checkNull = Optional.ofNullable(max.array[max.array.length-1]);   
+        if (checkNull.isPresent()) {
+        	Arrays.sort(max.array);
+    		return (E)max.array[max.array.length-1];
+        } 
+        else{ 
+        	System.out.println("Input is empty"); 
+            return null;
+       }
 	}
 }
