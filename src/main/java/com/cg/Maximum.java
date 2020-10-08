@@ -20,6 +20,14 @@ public class Maximum {
 			max=c;
 		return max;
 	}
+	public String findMaxString(String a,String b,String c) {
+		String max=new String(a);
+		if(b.compareTo(max)>0)
+			max=new String(b);
+		if(c.compareTo(max)>0)
+			max=new String(c);
+		return max;
+	}
     public static void main(String[] args) {
 		System.out.println("Welcome");
 	}
