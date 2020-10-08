@@ -34,4 +34,16 @@ public class MaximumTest {
 	public void testCase2_3() {
 		assertEquals((Float)30.0F,(Float)max.findMaxFloat(9.0F, 2.0F, 30.0F));
 	}
+	@Test
+	public void testCase3_1() {
+		assertEquals("Peach",max.findMaxString("Peach","Apple","Banana"));
+	}
+	@Test
+	public void testCase3_2() {
+		assertEquals("Peach",max.findMaxString("Apple","Peach","Banana"));
+	}
+	@Test
+	public void testCase3_3() {
+		assertEquals("Peach",max.findMaxString( "Banana", "Apple","Peach"));
+	}
 }
