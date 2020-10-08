@@ -22,4 +22,16 @@ public class MaximumTest {
 	public void testCase1_3() {
 		assertEquals((Integer)30,(Integer)max.findMaxInt(9, 2, 30));
 	}
+	@Test
+	public void testCase2_1() {
+		assertEquals((Float)9.0F,(Float)max.findMaxFloat(9.0F, 2.0F, 3.0F));
+	}
+	@Test
+	public void testCase2_2() {
+		assertEquals((Float)20.0F,(Float)max.findMaxFloat(9.0F, 20.0F, 12.0F));
+	}
+	@Test
+	public void testCase2_3() {
+		assertEquals((Float)30.0F,(Float)max.findMaxFloat(9.0F, 2.0F, 30.0F));
+	}
 }
