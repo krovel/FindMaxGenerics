@@ -16,11 +16,15 @@ public class Maximum <E extends Comparable<E>> {
 		Optional<E> checkNull = Optional.ofNullable(max.array[max.array.length-1]);   
         if (checkNull.isPresent()) {
         	Arrays.sort(max.array);
+        	printMax(max.array[max.array.length-1]);
     		return (E)max.array[max.array.length-1];
         } 
         else{ 
         	System.out.println("Input is empty"); 
             return null;
        }
+	}
+	public static <E> void printMax(E maximum) {
+		System.out.println("Maximum is: "+maximum);
 	}
 }
